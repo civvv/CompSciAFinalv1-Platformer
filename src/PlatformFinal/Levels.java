@@ -82,32 +82,46 @@ public class Levels extends Canvas implements KeyListener, Runnable {
 
         //Collision detection: Some problems with up and down, however functional
         if (bob.didCollideLeft(user) && (bob.didCollideRight(user))&&(user.getyPos()<260)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob2.didCollideLeft(user) && (bob2.didCollideRight(user))&&(user.getyPos()>275)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob3.didCollideTop(user) && (bob3.didCollideBottom(user))&&(user.getxPos()<360)&&(user.getxPos()>200)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob4.didCollideLeft(user) && (bob4.didCollideRight(user))&&(user.getyPos()>70)&&(user.getyPos()<450)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob5.didCollideTop(user) && (bob5.didCollideBottom(user))&&(user.getxPos()<540)&&(user.getxPos()>440)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob6.didCollideLeft(user) && (bob6.didCollideRight(user))){
+           user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (bob7.didCollideTop(user) && (bob7.didCollideBottom(user))&&(user.getxPos()<470)&&(user.getxPos()>270)){
+            user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
         }
         if (goal.didCollideLeft(user) && (goal.didCollideRight(user))&&(user.getyPos()<130)&&(user.getyPos()>90)){
             user.setColor(Color.cyan);
