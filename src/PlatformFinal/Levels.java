@@ -125,6 +125,7 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         }
         if (goal.didCollideLeft(user) && (goal.didCollideRight(user))&&(user.getyPos()<130)&&(user.getyPos()>90)){
             user.setColor(Color.cyan);
+            this.setVisible(false);
         }
         
         if (keys[0] == true) {
