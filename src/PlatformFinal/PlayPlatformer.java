@@ -20,6 +20,8 @@ public class PlayPlatformer extends JFrame {
         getContentPane().add(game);
 
         setVisible(true);
+                
+         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     public static void main(String args[]) {
