@@ -57,6 +57,7 @@ public class Enemy1 extends Block implements Collidable {
 
         //draw(window,Color.red); //draws over the old ball with whichever color you want
         //in case you want to have a trail
+        
         setxPos(getxPos() + xSpeed);
         setyPos(getyPos() + ySpeed);
 
