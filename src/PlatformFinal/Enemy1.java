@@ -27,8 +27,8 @@ public class Enemy1 extends Block implements Collidable {
 
     public Enemy1(int x, int y, int wid, int ht, Color col) {
         super(x, y, wid, ht, col);
-        xSpeed = 3;
-        ySpeed = 1;
+        xSpeed = 0;
+        ySpeed = 0;
     }
 
     public Enemy1(int x, int y, int wid, int ht, int xSpd, int ySpd) {
@@ -62,6 +62,45 @@ public class Enemy1 extends Block implements Collidable {
         setyPos(getyPos() + ySpeed);
 
         draw(window);   //draws the Ball
+    }
+    
+    public void squarePattern(int x1, int y1, int x2, int y2, int s)
+    {
+        //x1 = 50, y1 = 300, x2 = 200, y2 = 450
+        if(getxPos() == x1 && getyPos() == y1)
+        {
+            setXSpeed(s);
+            setYSpeed(0);
+        }
+        if(getxPos() == x2 && getyPos() == y1)
+        {
+            setXSpeed(0);
+            setYSpeed(s);
+        }
+        if(getxPos() == x2 && getyPos() == y2)
+        {
+            setXSpeed(-s);
+            setYSpeed(0);
+        }
+        if(getxPos() == x1 && getyPos() == y2)
+        {
+            setXSpeed(0);
+            setYSpeed(-s);
+        }
+    }
+    
+    public void horizontalLinePattern(int x1, int x2, int y, int s)
+    {
+        if(getxPos() == x1 && getyPos() == y)
+        {
+            setXSpeed(s);
+            //setYSpeed(0);
+        }
+        if(getxPos() == x2 && getyPos() == y)
+        {
+            setXSpeed(-s);
+            //setYSpeed(s);
+        }
     }
 
     public boolean didCollideLeft(Object obj) {
