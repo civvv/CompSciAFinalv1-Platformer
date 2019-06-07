@@ -115,6 +115,16 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         enemy5.horizontalLinePattern(400, 550, 150, 1);
         enemy6.horizontalLinePattern(400, 550, 200, 1);
         
+        //enemy collision detection
+        /*
+        if(enemy1.didCollideLeft(user) || enemy1.didCollideRight(user) || enemy1.didCollideTop(user) || enemy1.didCollideBottom(user))
+        {
+            user.draw(graphToBack, Color.WHITE);
+            user.setxPos(100);
+            user.setyPos(100);
+            user.draw(graphToBack,Color.BLUE);
+        }
+                */
         
 
         //Collision detection: Some problems with up and down, however functional
