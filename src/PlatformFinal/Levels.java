@@ -44,8 +44,10 @@ public class Levels extends Canvas implements KeyListener, Runnable {
     private Enemy1 enemy6;
     private ArrayList<Enemy1> enemList;
     private JFrame j;
+    private int score;
     public Levels(JFrame j ) {
         this.j = j;
+        score = 0;
         user = new Player(100, 100, 20, 20, Color.blue, 2);
         enemList = new ArrayList<Enemy1>();
         bob = new Enemy1(200,0,20,260, Color.red);
@@ -137,6 +139,7 @@ public class Levels extends Canvas implements KeyListener, Runnable {
                 user.setxPos(100);
                 user.setyPos(100);
                 user.draw(graphToBack, Color.BLUE);
+                score++;
             }
         }
 
@@ -146,6 +149,11 @@ public class Levels extends Canvas implements KeyListener, Runnable {
             user.setColor(Color.cyan);
             new Level2Runner();
             j.dispose();
+            try {
+                scorer(score);
+            } catch (IOException ex) {
+                Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         if (keys[0] == true) {
@@ -209,5 +217,13 @@ public class Levels extends Canvas implements KeyListener, Runnable {
             }
         } catch (Exception e) {
         }
+    }
+    public void scorer(int a) throws IOException{
+        System.out.println("User " + PlayPlatformer.getName1() + " failed " + a + " times in level 1.");
+        BufferedWriter out;
+        out = new BufferedWriter(new FileWriter("Scores.txt", true));
+        out.append("User " + PlayPlatformer.getName1() + " failed " + a + " times in level 1.");
+        out.newLine();
+        out.close();
     }
 }
