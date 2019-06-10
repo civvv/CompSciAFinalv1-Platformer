@@ -22,6 +22,7 @@ import static java.lang.Character.toUpperCase;
  */
 public class Level2 extends Canvas implements KeyListener, Runnable{
     private Player user;
+    private ArrayList<Ball> ballList;
     private Enemy1 bob;
     private Enemy1 bob2;
     private Enemy1 bob3;
@@ -36,6 +37,16 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
     private ArrayList<Enemy1> enemyList;
 
     public Level2() {
+        Ball ball1 = new Ball(10, 100, 40, 40, Color.blue, 2, 1);
+        Ball ball2 = new Ball(20, 100, 40, 40, Color.red, 1, 2);
+        Ball ball3 = new Ball(60, 100, 40, 40, Color.green, -4, 2);
+        Ball ball4 = new Ball(90, 30, 40, 40, Color.BLACK, 3, 5);
+        ballList = new ArrayList<Ball>();
+        ballList.add(ball1);
+        ballList.add(ball2);
+        ballList.add(ball3);
+        ballList.add(ball4);
+        
         enemyList = new ArrayList<Enemy1>();
         user = new Player(100, 100, 20, 25, Color.blue, 2);
         bob = new Enemy1(200,0,20,260, Color.red, 0, 1);
@@ -78,7 +89,16 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         graphToBack.setColor(Color.red);
 
         user.draw(graphToBack);
-
+        for (Ball b: ballList){
+            b.moveAndDraw(graphToBack);
+            if (!(b.getyPos() >= 0 && b.getyPos() <= 450)) {
+            b.setYSpeed(-b.getYSpeed());
+            }
+            if (!(b.getxPos()>=0 && b.getxPos() <= 650)){
+                b.setXSpeed(-b.getXSpeed());
+            }
+        }
+        
 
         //Collision detection: Some problems with up and down, however functional
         for (Enemy1 e: enemyList){
