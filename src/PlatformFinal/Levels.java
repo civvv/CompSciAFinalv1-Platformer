@@ -47,13 +47,21 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         user = new Player(100, 100, 20, 20, Color.blue, 2);
         enemList = new ArrayList<Enemy1>();
         bob = new Enemy1(200,0,20,260, Color.red);
+        enemList.add(bob);
         bob2 = new Enemy1(280,300,20,260, Color.red);
+        enemList.add(bob2);
         bob3 = new Enemy1(200,150,200,20, Color.red);
+        enemList.add(bob3);
         bob4 = new Enemy1(380,70,20,380, Color.red);
+        enemList.add(bob4);
         bob5 = new Enemy1(440,300,100,20, Color.red);
+        enemList.add(bob5);
         bob6 = new Enemy1(580,0,20,600, Color.red);
+        enemList.add(bob6);
         bob7 = new Enemy1(270,50,200,20, Color.red);
+        enemList.add(bob7);
         goal = new Enemy1(310, 95, 30, 30, Color.green);
+        
         keys = new boolean[4];
         
         enemy1 = new Enemy1(50, 300, 25, 25, Color.black, 2, 0);
@@ -139,48 +147,7 @@ public class Levels extends Canvas implements KeyListener, Runnable {
                    
 
         //Collision detection: Some problems with up and down, however functional
-        if (bob.didCollideLeft(user) && (bob.didCollideRight(user))&&(user.getyPos()<260)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob2.didCollideLeft(user) && (bob2.didCollideRight(user))&&(user.getyPos()>275)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob3.didCollideTop(user) && (bob3.didCollideBottom(user))&&(user.getxPos()<360)&&(user.getxPos()>200)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob4.didCollideLeft(user) && (bob4.didCollideRight(user))&&(user.getyPos()>70)&&(user.getyPos()<450)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob5.didCollideTop(user) && (bob5.didCollideBottom(user))&&(user.getxPos()<540)&&(user.getxPos()>440)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob6.didCollideLeft(user) && (bob6.didCollideRight(user))){
-           user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-        if (bob7.didCollideTop(user) && (bob7.didCollideBottom(user))&&(user.getxPos()<470)&&(user.getxPos()>270)){
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
+        
         if (goal.didCollideLeft(user) && (goal.didCollideRight(user))&&(user.getyPos()<130)&&(user.getyPos()>90)){
             user.setColor(Color.cyan);
             this.setVisible(false);
