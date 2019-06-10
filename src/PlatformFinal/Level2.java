@@ -38,13 +38,13 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
     public Level2() {
         enemyList = new ArrayList<Enemy1>();
         user = new Player(100, 100, 20, 25, Color.blue, 2);
-        bob = new Enemy1(200,0,20,260, Color.red, 2, 1);
-        bob2 = new Enemy1(280,300,20,260, Color.red, 2, 1);
-        bob3 = new Enemy1(200,150,200,20, Color.red, 2, 1);
-        bob4 = new Enemy1(380,70,20,380, Color.red, 2, 1);
-        bob5 = new Enemy1(440,300,100,20, Color.red, 2, 1);
-        bob6 = new Enemy1(580,0,20,600, Color.red, 2, 1);
-        bob7 = new Enemy1(270,50,200,20, Color.red, 2, 1);
+        bob = new Enemy1(200,0,20,260, Color.red, 0, 1);
+        bob2 = new Enemy1(280,300,20,260, Color.red, 0, 1);
+        bob3 = new Enemy1(200,150,200,20, Color.red, 0, 1);
+        bob4 = new Enemy1(380,70,20,380, Color.red, 0, 1);
+        bob5 = new Enemy1(440,300,100,20, Color.red, 0, 1);
+        bob6 = new Enemy1(580,0,20,600, Color.red, 0, 1);
+        bob7 = new Enemy1(270,50,200,20, Color.red, 0, 1);
         goal = new Enemy1(310, 95, 30, 30, Color.green);
         keys = new boolean[4];
         enemyList.add(bob);
@@ -82,12 +82,14 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
 
         //Collision detection: Some problems with up and down, however functional
         for (Enemy1 e: enemyList){
+            e.moveAndDraw(graphToBack);
             if (e.getxPos() > 550 || e.getyPos() > 700){
-
+                e.setColor(Color.white);
                 e.setxPos(0);
                 e.setyPos(0);
+                e.setColor(Color.red);
             }
-            e.moveAndDraw(graphToBack);
+            
         }
         
         

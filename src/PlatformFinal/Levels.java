@@ -41,10 +41,11 @@ public class Levels extends Canvas implements KeyListener, Runnable {
     private Enemy1 enemy4;
     private Enemy1 enemy5;
     private Enemy1 enemy6;
-    
+    private ArrayList<Enemy1> enemList;
 
     public Levels() {
         user = new Player(100, 100, 20, 20, Color.blue, 2);
+        enemList = new ArrayList<Enemy1>();
         bob = new Enemy1(200,0,20,260, Color.red);
         bob2 = new Enemy1(280,300,20,260, Color.red);
         bob3 = new Enemy1(200,150,200,20, Color.red);
@@ -56,12 +57,16 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         keys = new boolean[4];
         
         enemy1 = new Enemy1(50, 300, 25, 25, Color.black, 2, 0);
+        enemList.add(enemy1);
         enemy2 = new Enemy1(420, 350, 25, 25, Color.black, 1, 0);
-       
+        enemList.add(enemy2);
         //line pattern
         enemy4 = new Enemy1(400, 100, 25, 25, Color.black, 1, 0);
+        enemList.add(enemy4);
         enemy5 = new Enemy1(450, 150, 25, 25, Color.black, 1, 0);
+        enemList.add(enemy5);
         enemy6 = new Enemy1(500, 200, 25, 25, Color.black, 1, 0);
+        enemList.add(enemy6);
         
 
         setBackground(Color.WHITE);
@@ -116,16 +121,22 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         enemy6.horizontalLinePattern(400, 550, 200, 1);
         
         //enemy collision detection
-        /*
-        if(enemy1.didCollideLeft(user) || enemy1.didCollideRight(user) || enemy1.didCollideTop(user) || enemy1.didCollideBottom(user))
+        for (Enemy1 e : enemList){
+            if (user.isCollide(e)){
+                user.draw(graphToBack, Color.WHITE);
+                user.setxPos(100);
+                user.setyPos(100);
+                user.draw(graphToBack, Color.BLUE);
+            }
+        }
+        if(user.isCollide(enemy1))
         {
             user.draw(graphToBack, Color.WHITE);
             user.setxPos(100);
             user.setyPos(100);
             user.draw(graphToBack,Color.BLUE);
         }
-                */
-        
+                   
 
         //Collision detection: Some problems with up and down, however functional
         if (bob.didCollideLeft(user) && (bob.didCollideRight(user))&&(user.getyPos()<260)){

@@ -3,7 +3,7 @@ package PlatformFinal;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Player extends Block {
+public class Player extends Block implements Collidable {
 
     private int speed;
 
@@ -60,6 +60,25 @@ public class Player extends Block {
 
     public int getSpeed() {
         return speed;
+    }
+    public boolean didCollideLeft(Object obj) {
+        Block other = (Block) obj;
+        return getxPos() <= other.getxPos() + other.getWidth() + Math.abs(getSpeed());
+    }
+
+    public boolean didCollideRight(Object obj) {
+        Block other = (Block) obj;
+        return getxPos() + getWidth() >= other.getxPos() - Math.abs(getSpeed());
+    }
+
+    public boolean didCollideTop(Object obj) {
+        Block other = (Block) obj;
+        return getyPos() >= other.getyPos() && getyPos() <= other.getyPos() + getHeight();
+    }
+
+    public boolean didCollideBottom(Object obj) {
+        Block other = (Block) obj;
+        return getyPos() + getHeight() >= other.getyPos() && getyPos() + getHeight() <= other.getyPos() + other.getHeight();
     }
 
     public String toString() {
