@@ -83,7 +83,7 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         //Collision detection: Some problems with up and down, however functional
         for (Enemy1 e: enemyList){
             e.moveAndDraw(graphToBack);
-            if (e.getxPos() > 550 || e.getyPos() > 700){
+            if (e.isCollide(user)){
                 e.setColor(Color.white);
                 e.setxPos(0);
                 e.setyPos(0);

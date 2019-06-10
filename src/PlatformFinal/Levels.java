@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Canvas;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
@@ -20,7 +21,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-
+import javax.swing.JFrame;
 public class Levels extends Canvas implements KeyListener, Runnable {
 
     private Player user;
@@ -42,8 +43,9 @@ public class Levels extends Canvas implements KeyListener, Runnable {
     private Enemy1 enemy5;
     private Enemy1 enemy6;
     private ArrayList<Enemy1> enemList;
-
-    public Levels() {
+    private JFrame j;
+    public Levels(JFrame j ) {
+        this.j = j;
         user = new Player(100, 100, 20, 20, Color.blue, 2);
         enemList = new ArrayList<Enemy1>();
         bob = new Enemy1(200,0,20,260, Color.red);
@@ -137,20 +139,13 @@ public class Levels extends Canvas implements KeyListener, Runnable {
                 user.draw(graphToBack, Color.BLUE);
             }
         }
-        if(user.isCollide(enemy1))
-        {
-            user.draw(graphToBack, Color.WHITE);
-            user.setxPos(100);
-            user.setyPos(100);
-            user.draw(graphToBack,Color.BLUE);
-        }
-                   
 
         //Collision detection: Some problems with up and down, however functional
         
         if (goal.didCollideLeft(user) && (goal.didCollideRight(user))&&(user.getyPos()<130)&&(user.getyPos()>90)){
             user.setColor(Color.cyan);
-            this.setVisible(false);
+            new Level2Runner();
+            j.dispose();
         }
         
         if (keys[0] == true) {
