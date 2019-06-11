@@ -96,13 +96,6 @@ public class Ball extends Block implements Collidable {
         return getyPos() + getHeight() >= other.getyPos() && getyPos() + getHeight() <= other.getyPos() + other.getHeight();
     }
 
-    public boolean equals(Object obj) {
-        Ball other = (Ball) obj;
-        if (super.equals(other) && getXSpeed() == other.getXSpeed() && getYSpeed() == other.getYSpeed()) {
-            return true;
-        }
-        return false;
-    }
 
     public int getXSpeed() {
         return xSpeed;

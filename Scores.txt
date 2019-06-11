@@ -1,2 +1,13 @@
 User asf failed 11 times in level 1.
 User boi failed 1 times in level 1.
+User boi failed 2 times in level 1.
+User sdf failed 4 times in level 1.
+User df failed 0 times in level 1.
+User s failed 0 times in level 1.
+User  failed 2 times in level 1.
+User s failed 0 times in level 1.
+User  failed 7 times in level 1.
+User  failed 0 times in level 1.
+User  failed 4 times in level 1.
+User  failed 3 times in level 1.
+User  failed 10 times in level 1.
