@@ -42,11 +42,15 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         Ball ball3 = new Ball(60, 100, 40, 40, Color.green, -4, 2);
         Ball ball4 = new Ball(90, 30, 40, 40, Color.BLACK, 3, 5);
         Ball ball5 = new Ball(90, 20, 40 , 40, Color.MAGENTA, -5, 2);
+        Ball ball6 = new Ball(50, 130, 40, 40, Color.GRAY, 4, 1);
         ballList = new ArrayList<Ball>();
         ballList.add(ball1);
         ballList.add(ball2);
         ballList.add(ball3);
         ballList.add(ball4);
+        ballList.add(ball5);
+        ballList.add(ball6);
+        
         
         enemyList = new ArrayList<Enemy1>();
         user = new Player(100, 100, 20, 25, Color.blue, 2);
