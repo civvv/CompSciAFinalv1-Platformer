@@ -31,7 +31,7 @@ public class PlayPlatformer extends JFrame {
     public static void main(String args[]) {
         Object[] options1 = {"Okay."};
         JOptionPane.showOptionDialog(null,
-                "1. Just type the word displayed on the screen" + "\n2. Do not press spacebar/enter to enter the word in as this game does it automatically." + "\n3. And most importantly, have fun. - Cassidy Liu, Per 1",
+                "1. Move the player to the green box" + "\n2. Avoid the enemies by moving around them" + "\n3. And most importantly, have fun.",
                 "Game Rules",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.PLAIN_MESSAGE,
