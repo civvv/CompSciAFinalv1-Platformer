@@ -41,6 +41,7 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         Ball ball2 = new Ball(20, 100, 40, 40, Color.red, 1, 2);
         Ball ball3 = new Ball(60, 100, 40, 40, Color.green, -4, 2);
         Ball ball4 = new Ball(90, 30, 40, 40, Color.BLACK, 3, 5);
+        Ball ball5 = new Ball(90, 20, 40 , 40, Color.MAGENTA, -5, 2);
         ballList = new ArrayList<Ball>();
         ballList.add(ball1);
         ballList.add(ball2);
@@ -49,9 +50,10 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         
         enemyList = new ArrayList<Enemy1>();
         user = new Player(100, 100, 20, 25, Color.blue, 2);
-        Enemy1 e1 = new Enemy1(550, 140, 20, 300, Color.red, 2, 1);
-        Enemy1 e2 = new Enemy1(570, 440, 200, 20, Color.red);
+        Enemy1 e1 = new Enemy1(550, 50, 20, 400, Color.red, 2, 1);
+        Enemy1 e2 = new Enemy1(570, 600, 200, 20, Color.red, 2, 1);
         enemyList.add(e1);
+        enemyList.add(e2);
         goal = new Enemy1(600, 260, 30, 30, Color.green);
         keys = new boolean[4];
 
@@ -108,7 +110,7 @@ public class Level2 extends Canvas implements KeyListener, Runnable{
         
         for (Enemy1 e: enemyList){
             e.draw(graphToBack);
-            if (e.isCollide(user)){
+            if (user.isCollide(e)){
                 user.draw(graphToBack, Color.WHITE);
                 user.setxPos(100);
                 user.setyPos(100);
