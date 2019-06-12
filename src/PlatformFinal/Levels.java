@@ -47,6 +47,7 @@ public class Levels extends Canvas implements KeyListener, Runnable {
     private Enemy1 bottomwall;
     private ArrayList<Enemy1> enemList;
     private JFrame j;
+    private int score = 0;
     private Powerup speedpower;
     public Levels(JFrame j ) {
         this.j = j;
@@ -156,6 +157,7 @@ public class Levels extends Canvas implements KeyListener, Runnable {
                 user.setColor(Color.BLUE);
                 speedpower.setColor(Color.magenta);
                 user.draw(graphToBack, Color.BLUE);
+                score++;
             }
         }
         if (user.isCollide(speedpower)){
@@ -168,6 +170,11 @@ public class Levels extends Canvas implements KeyListener, Runnable {
         
         if (goal.didCollideLeft(user) && (goal.didCollideRight(user))&&(user.getyPos()<130)&&(user.getyPos()>90)){
             user.setColor(Color.cyan);
+            try {
+                scorer(score);
+            } catch (IOException ex) {
+                Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+            }
             new Level2Runner();
             j.dispose();
         }
@@ -187,7 +194,14 @@ public class Levels extends Canvas implements KeyListener, Runnable {
   
         twoDGraph.drawImage(back, null, 0, 0);
     }
-
+    public void scorer(int a) throws IOException{
+        System.out.println("User " + PlayPlatformer.getName1() + " failed " + a + " times in level 1.");
+        BufferedWriter out;
+        out = new BufferedWriter(new FileWriter("Scores.txt", true));
+        out.append("User " + PlayPlatformer.getName1() + " failed " + a + " times in level 1.");
+        out.newLine();
+        out.close();
+    }
     public void keyPressed(KeyEvent e) {
         switch (toUpperCase(e.getKeyChar())) {
             case 'W':
