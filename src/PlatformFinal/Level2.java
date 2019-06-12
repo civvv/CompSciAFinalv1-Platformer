@@ -47,12 +47,13 @@ public class Level2 extends Canvas implements KeyListener, Runnable {
     private Enemy1 rightwall;
 
     public Level2() {
-        Ball ball1 = new Ball(10, 100, 40, 40, Color.ORANGE, 2, 1);
-        Ball ball2 = new Ball(20, 100, 40, 40, Color.red, 1, 2);
-        Ball ball3 = new Ball(60, 100, 40, 40, Color.green, -4, 2);
-        Ball ball4 = new Ball(90, 30, 40, 40, Color.BLACK, 3, 5);
-        Ball ball5 = new Ball(90, 20, 40, 40, Color.MAGENTA, -5, 2);
-        Ball ball6 = new Ball(50, 130, 40, 40, Color.GRAY, 4, 1);
+        Ball ball1 = new Ball(350, 100, 30, 30, Color.gray, 2, 1);
+        Ball ball2 = new Ball(200, 250, 40, 40, Color.gray, 1, 2);
+        Ball ball3 = new Ball(450, 100, 45, 45, Color.black, -4, 2);
+        Ball ball4 = new Ball(300, 30, 35, 35, Color.BLACK, 3, 5);
+        Ball ball5 = new Ball(80, 450, 25 , 25, Color.black, -5, 2);
+        Ball ball6 = new Ball(50, 460, 50, 50, Color.GRAY, 4, 1);
+        
         ballList = new ArrayList<Ball>();
         ballList.add(ball1);
         ballList.add(ball2);
@@ -60,17 +61,18 @@ public class Level2 extends Canvas implements KeyListener, Runnable {
         ballList.add(ball4);
         ballList.add(ball5);
         ballList.add(ball6);
+        
 
         enemyList = new ArrayList<Enemy1>();
-        user = new Player(100, 100, 20, 25, Color.blue, 2);
-        Enemy1 e1 = new Enemy1(550, 50, 20, 400, Color.red, 2, 1);
+        user = new Player(100, 100, 25, 25, Color.blue, 2);
+        Enemy1 e1 = new Enemy1(550, 90, 20, 360, Color.red, 2, 1);
         Enemy1 e2 = new Enemy1(570, 600, 200, 20, Color.red, 2, 1);
-        enemyList.add(e1);
-        enemyList.add(e2);
         Enemy1 bob = new Enemy1(250, 110, 20, 200, Color.red, 2, 1);
         Enemy1 bob2 = new Enemy1(190, 420, 170, 20, Color.red, 2, 1);
         Enemy1 bob3 = new Enemy1(400, 300, 20, 100, Color.red, 2, 1);
         Enemy1 bob4 = new Enemy1(550, 490, 200, 20, Color.red, 2, 1);
+        enemyList.add(e1);
+        enemyList.add(e2);
         enemyList.add(bob);
         enemyList.add(bob2);
         enemyList.add(bob3);
