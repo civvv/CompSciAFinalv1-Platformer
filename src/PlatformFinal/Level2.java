@@ -41,6 +41,10 @@ public class Level2 extends Canvas implements KeyListener, Runnable {
     private FileWriter writer;
     private ArrayList<Enemy1> enemyList;
     private int score = 0;
+    private Enemy1 leftwall;
+    private Enemy1 topwall;
+    private Enemy1 bottomwall;
+    private Enemy1 rightwall;
 
     public Level2() {
         Ball ball1 = new Ball(10, 100, 40, 40, Color.ORANGE, 2, 1);
@@ -63,8 +67,24 @@ public class Level2 extends Canvas implements KeyListener, Runnable {
         Enemy1 e2 = new Enemy1(570, 600, 200, 20, Color.red, 2, 1);
         enemyList.add(e1);
         enemyList.add(e2);
+        Enemy1 bob = new Enemy1(250, 110, 20, 200, Color.red, 2, 1);
+        Enemy1 bob2 = new Enemy1(190, 420, 170, 20, Color.red, 2, 1);
+        Enemy1 bob3 = new Enemy1(400, 300, 20, 100, Color.red, 2, 1);
+        Enemy1 bob4 = new Enemy1(550, 490, 200, 20, Color.red, 2, 1);
+        enemyList.add(bob);
+        enemyList.add(bob2);
+        enemyList.add(bob3);
+        enemyList.add(bob4);
         goal = new Enemy1(600, 260, 30, 30, Color.green);
         keys = new boolean[4];
+        leftwall = new Enemy1(0,0,20,700, Color.red);
+        rightwall = new Enemy1(714,0,20,700, Color.red);
+        topwall = new Enemy1(0,0,760,20, Color.red);
+        bottomwall = new Enemy1(0,541,760,20, Color.red);
+        enemyList.add(leftwall);
+        enemyList.add(topwall);
+        enemyList.add(bottomwall);
+        enemyList.add(rightwall);
 
         setBackground(Color.WHITE);
         setVisible(true);
