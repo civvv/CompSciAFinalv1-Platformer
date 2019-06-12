@@ -11,3 +11,8 @@ User  failed 0 times in level 1.
 User  failed 4 times in level 1.
 User  failed 3 times in level 1.
 User  failed 10 times in level 1.
+User s failed 15 times in level 1.
+User  failed 9 times in level 1.
+User  failed 163 times in level 2.
+User  failed 2 times in level 1.
+User  failed 23 times in level 2.

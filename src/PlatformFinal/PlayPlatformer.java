@@ -18,8 +18,8 @@ public class PlayPlatformer extends JFrame {
         super("Erik Beer CompSciA Final - Super Blocko");
         setSize(WIDTH, HEIGHT);
 
-        //Levels game = new Levels(this);
-        Level2 game = new Level2();
+        Levels game = new Levels(this);
+        //Level2 game = new Level2();
         ((Component) game).setFocusable(true);
         getContentPane().add(game);
 

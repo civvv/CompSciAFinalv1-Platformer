@@ -127,7 +127,7 @@ public class Level2 extends Canvas implements KeyListener, Runnable {
             if (!(b.getxPos() >= 0 && b.getxPos() <= 650)) {
                 b.setXSpeed(-b.getXSpeed());
             }
-            if (b.isCollide(user)) {
+            if (b.isCollide(user) && user.getxPos() != 100 && user.getyPos() != 100) {
                 user.draw(graphToBack, Color.WHITE);
                 user.setxPos(100);
                 user.setyPos(100);
